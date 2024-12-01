@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Java Developer CV</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.4;
+            font-size: 14px;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #333;
+        }
+        .section {
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a237e;
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #1565c0;
+            border-bottom: 2px solid #1565c0;
+            padding-bottom: 5px;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        .skill-category h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        li {
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
+        }
+        li:before {
+            content: "•";
+            color: #1565c0;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Add these print-specific styles */
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #eee;
+            }
+            
+            @page {
+                margin: 1cm;
+                size: A4;
+            }
+            
+            a {
+                text-decoration: none;
+                color: #333;
+            }
+        }
+
+        .project {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .project-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .project-title h3 {
+            margin: 0;
+            color: #1565c0;
+            font-size: 1.1em;
+        }
+
+        .project-badge {
+            background: #f0f4f8;
+            color: #1565c0;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 400;
+            border: 1px solid #e0e8f0;
+        }
+
+        .project-metadata {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .metadata-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .metadata {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .tech-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tech-item {
+            background: #f5f5f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: #444;
+            white-space: nowrap;
+        }
+
+        .project-tech h4 {
+            margin: 0 0 15px 0;
+            color: #333;
+            font-size: 1em;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .tech-category {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-label {
+            min-width: 120px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .tech-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-item {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #444;
+            white-space: nowrap;
+            border: 1px solid #dee2e6;
+            transition: all 0.2s ease;
+        }
+        .tech-item:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* General improvements */
+        body {
+            background-color: #f5f5f5;
+            color: #2c3e50;
+        }
+
+        .section {
+            border: none;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Headers styling */
+        h1 {
+            background: linear-gradient(120deg, #1a237e, #1565c0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        /* Add print-specific style for h1 */
+        @media print {
+            h1 {
+                background: none;
+                -webkit-background-clip: unset;
+                -webkit-text-fill-color: #1a237e;
+                color: #1a237e;
+            }
+        }
+
+        h2 {
+            position: relative;
+            padding-bottom: 8px;
+            border-bottom: none;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 50px;
+            background: linear-gradient(90deg, #1565c0, transparent);
+        }
+
+        /* Tech items styling */
+        .tech-item {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 1px solid #dee2e6;
+            transition: all 0.2s ease;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* Project sections */
+        .project {
+            border-left: 2px solid #1565c0;
+            transition: all 0.2s ease;
+        }
+
+        .project:hover {
+            transform: translateX(3px);
+        }
+
+        /* .project-badge {
+            background: linear-gradient(135deg, #1565c0, #1a237e);
+            color: white;
+            font-weight: 500;
+        } */
+
+        /* Professional Summary styling */
+        .section ul {
+            padding-left: 20px;
+        }
+
+        .section ul li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 8px;
+        }
+
+        .section ul li:before {
+            content: "▹";
+            position: absolute;
+            left: -15px;
+            color: #1565c0;
+            font-size: 14px;
+        }
+
+        /* Contact info improvements */
+        .contact-info a {
+            position: relative;
+            text-decoration: none;
+            color: #2c3e50;
+            transition: color 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            color: #1565c0;
+        }
+
+        .contact-info a:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #1565c0;
+            transform: scaleX(0);
+            transition: transform 0.2s ease;
+        }
+
+        .contact-info a:hover:after {
+            transform: scaleX(1);
+        }
+
+        .education {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        .education-icon {
+            color: #1565c0;
+            font-size: 24px;
+            padding-top: 5px;
+        }
+
+        .education-content {
+            flex: 1;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .education-degree {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+
+        .education-date {
+            color: #666;
+            font-size: 1em;
+        }
+
+        .education-school {
+            color: #1565c0;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .education-gpa {
+            display: inline-block;
+            background: #f0f4f8;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #1565c0;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .contact-info strong {
+            font-size: 1.2em;
+            color: #1565c0;
+            display: block;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="section">
+        <h1>DO TRUNG NGOC</h1>
+        <div class="contact-info">
+            <strong>Java Backend Developer</strong><br>
+            <i class="fas fa-envelope"></i> trungngoc0704@email.com<br>
+            <i class="fas fa-phone"></i> 0768817617<br>
+            <i class="fab fa-linkedin"></i>linkedin.com/in/trung-ngoc-do<br>
+            <i class="fas fa-map-marker-alt"></i> Go Vap, HCM
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>PROFESSIONAL SUMMARY</h2>
+        <p>
+            Java Backend Developer with 3 years of experience in banking and insurance. Proficient in developing robust, scalable, and asynchronous systems using the Spring Framework and microservices architecture. Skilled in designing and optimizing large-scale system models to address complex business requirements, ensuring high performance and reliability.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>EDUCATION</h2>
+        <div class="education">
+            <div class="education-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="education-content">
+                <div class="education-header">
+                    <span class="education-degree">Software Engineer</span>
+                    <span class="education-date">2019 - 2024</span>
+                </div>
+                <div class="education-school">Industrial University of Ho Chi Minh City</div>
+                <span class="education-gpa">GPA: 3.6/4.0</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>TECHNICAL SKILLS</h2>
+        <div class="tech-stack">
+            <div class="tech-category">
+                <span class="category-label">Core:</span>
+                <div class="tech-items">
+                    <span class="tech-item">Java 21</span>
+                    <span class="tech-item">Spring Boot</span>
+                    <span class="tech-item">Spring WebFlux</span>
+                    <span class="tech-item">Spring Data JPA</span>
+                    <span class="tech-item">Reactive Programming</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <span class="category-label">Architecture:</span>
+                <div class="tech-items">
+                    <span class="tech-item">Microservices</span>
+                    <span class="tech-item">Event-Driven</span>
+                    <span class="tech-item">CQRS Pattern</span>
+                    <span class="tech-item">gRPC</span>
+                    <span class="tech-item">Temporal Platform</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <span class="category-label">Database:</span>
+                <div class="tech-items">
+                    <span class="tech-item">PostgreSQL</span>
+                    <span class="tech-item">MongoDB</span>
+                    <span class="tech-item">SQL Server</span>
+                    <span class="tech-item">Elasticsearch</span>
+                    <span class="tech-item">Redis Cache</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <span class="category-label">DevOps:</span>
+                <div class="tech-items">
+                    <span class="tech-item">Docker</span>
+                    <span class="tech-item">OpenShift</span>
+                    <span class="tech-item">GitLab</span>
+                    <span class="tech-item">GitHub</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <span class="category-label">Others:</span>
+                <div class="tech-items">
+                    <span class="tech-item">RabbitMQ</span>
+                    <span class="tech-item">Kafka</span>
+                    <span class="tech-item">Jira</span>
+                    <span class="tech-item">Confluence</span>
+                    <span class="tech-item">Scrum</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>WORK EXPERIENCE</h2>
+        <p>
+            <strong>Backend Java Developer</strong> - Sacombank<br>
+            <em>September 2023 - Present</em><br>
+            <ul>
+                <li>Participated in the OmniChannel project, a digital transformation initiative for unified banking channels.</li>
+                
+                <li>Key Responsibilities and Contributions:</li>
+                <ul style="margin-left: 20px;">
+                    <li>Developed features related to fund transfers and authentication systems (Smart OTP and SMS OTP).</li>
+                    <li>Worked with services in a microservice architecture, asynchronous and multithreading processes, as well as core banking systems.</li>
+                    <li>Provided support for technical issues related to the project.</li>
+                    <li>Assisted partners in integrating project APIs, ensuring smooth and efficient implementation.</li>
+                    <li>Participated in system design and conducted research on new technologies.</li>
+                </ul>
+                <li>Working with enterprise tools, ensuring library versions are always up-to-date to prevent security vulnerabilities.</li>
+                <li>Working with CI/CD processes and security scanning to ensure code quality.</li>
+            </ul>
+        </p>
+        <p>
+            <strong>Backend Java Developer</strong> - Alpaca Vietnam Company<br>
+            <em>May 2022 - August 2023</em><br>
+            <ul>
+                <li>Developed and maintained insurance software solutions for major insurance companies (Bao Long, Bao Viet, BSH)</li>
+                <li>Key contributions to Libra and Taurus projects across multiple modules:</li>
+                <ul style="margin-left: 20px;">
+                    <li>Admin-center: Implemented authentication and authorization system, managing company hierarchies, departments, and permissions</li>
+                    <li>Assets: Developed file management system with PDF generation and watermark capabilities</li>
+                    <li>Notification: Built real-time notification system for web and mobile platforms</li>
+                    <li>Core: Handled insurance business logic (Quote, Policy, Contract, Endorsement, Payment)</li>
+                </ul>
+                <li>Optimized user permission and hierarchy calculation, reducing processing time from 22 seconds to 2 seconds</li>
+                <li>Maintained and troubleshot production issues, managing databases with 100,000+ records</li>
+                <li>Collaborated with QA team for bug verification and reproduction</li>
+                <li>Actively participated in Scrum ceremonies and daily stand-ups</li>
+            </ul>
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>KEY PROJECTS</h2>
+        
+        <!-- 1. Omnichannel (Newest) -->
+        <div class="project">
+            <div class="project-title">
+                <h3>Omnichannel</h3>
+                <span class="project-badge">Sacombank</span>
+            </div>
+
+            <div class="project-metadata">
+                <div class="metadata-item">
+                    <i class="far fa-calendar"></i> 09/2023 - Present
+                </div>
+                <div class="metadata-item">
+                    <i class="fas fa-users"></i> Team size: 50
+                </div>
+            </div>
+
+            <div class="project-description">
+                <ul>
+                    <li>Build a microservices system to provide APIs for clients and integrate with the existing core banking system</li>
+                    <li>Develop services related to payment and authentication</li>
+                    <li>Working with a workflow architecture model, asynchronous processes, and high latency</li>
+                </ul>
+            </div>
+
+            <div class="project-tech">
+                <h4>TECHNOLOGY USED</h4>
+                <div class="tech-stack">
+                    <div class="tech-category">
+                        <div class="tech-items">
+                            <span class="tech-item">Java 21</span>
+                            <span class="tech-item">Spring Boot</span>
+                            <span class="tech-item">Spring WebFlux</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <div class="tech-items">
+                            <span class="tech-item">Microservices</span>
+                            <span class="tech-item">gRPC</span>
+                            <span class="tech-item">Temporal</span>
+                            <span class="tech-item">Reactive Programming</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <div class="tech-items">
+                            <span class="tech-item">Redis</span>
+                            <span class="tech-item">ActiveMQ</span>
+                            <span class="tech-item">Docker</span>
+                            <span class="tech-item">OpenShift</span>
+                            <span class="tech-item">GitLab</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. TAURUS -->
+        <div class="project">
+            <div class="project-title">
+                <h3>TAURUS</h3>
+                <span class="project-badge">Agribank insurance</span>
+            </div>
+
+            <div class="project-metadata">
+                <div class="metadata-item">
+                    <i class="far fa-calendar"></i> 01/2023 - 08/2023
+                </div>
+                <div class="metadata-item">
+                    <i class="fas fa-users"></i> Team size: 10
+                </div>
+            </div>
+
+            <div class="project-description">
+                <ul>
+                    <li>Project to build web, app and service for Agribank insurance's indemnity system</li>
+                    <li>Responsible for the module Admin center and support modules: assets, notification</li>
+                </ul>
+            </div>
+
+            <div class="project-tech">
+                <h4>TECHNOLOGY USED</h4>
+                <div class="tech-stack">
+                    <div class="tech-category">
+                        <div class="tech-items">
+                            <span class="tech-item">Java 8</span>
+                            <span class="tech-item">Spring Framework</span>
+                            <span class="tech-item">Microservices</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <div class="tech-items">
+                            <span class="tech-item">Elasticsearch</span>
+                            <span class="tech-item">MongoDB</span>
+                            <span class="tech-item">PostgreSQL</span>
+                            <span class="tech-item">Redis Cache</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <div class="tech-items">
+                            <span class="tech-item">Event-driven</span>
+                            <span class="tech-item">CQRS pattern</span>
+                            <span class="tech-item">Kafka</span>
+                            <span class="tech-item">CDC</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <div class="tech-items">
+                            <span class="tech-item">RabbitMQ</span>
+                            <span class="tech-item">WebSocket</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. LIBRA -->
+        <div class="project">
+            <div class="project-title">
+                <h3>LIBRA</h3>
+                <span class="project-badge">Bao Long Insurance</span>
+            </div>
+
+            <div class="project-metadata">
+                <div class="metadata-item">
+                    <i class="far fa-calendar"></i> 05/2022 - 08/2023
+                </div>
+                <div class="metadata-item">
+                    <i class="fas fa-users"></i> Team size: 40
+                </div>
+            </div>
+
+            <div class="project-description">
+                <ul>
+                    <li>Project to build web, app and service support core sale insurance for customer Bao Long with 11 modules (admin-center, core,...)</li>
+                    <li>Work with an Event-driven base Microservices system with more than 25 containers</li>
+                    <li>Responsible for the module Admin center and support modules: core, assets, notification</li>
+                </ul>
+            </div>
+
+            <div class="project-tech">
+                <h4>TECHNOLOGY USED</h4>
+                <div class="tech-stack">
+                    <div class="tech-category">
+                        <div class="tech-items">
+                            <span class="tech-item">Java 8</span>
+                            <span class="tech-item">Spring Framework</span>
+                            <span class="tech-item">Microservices</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <div class="tech-items">
+                            <span class="tech-item">Elasticsearch</span>
+                            <span class="tech-item">MongoDB</span>
+                            <span class="tech-item">PostgreSQL</span>
+                            <span class="tech-item">Redis Cache</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <div class="tech-items">
+                            <span class="tech-item">Event-driven</span>
+                            <span class="tech-item">CQRS pattern</span>
+                            <span class="tech-item">CDC</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <div class="tech-items">
+                            <span class="tech-item">RabbitMQ</span>
+                            <span class="tech-item">Kafka</span>
+                            <span class="tech-item">WebSocket</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <div class="tech-items">
+                            <span class="tech-item">Gitlab</span>
+                            <span class="tech-item">Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Share Knowledge (Oldest) -->
+        <div class="project">
+            <div class="project-title">
+                <h3>Share Knowledge</h3>
+                <span class="project-badge">Graduation thesis</span>
+            </div>
+
+            <div class="project-metadata">
+                <div class="metadata-item">
+                    <i class="far fa-calendar"></i> 01/2023 - 05/2023
+                </div>
+                <div class="metadata-item">
+                    <i class="fas fa-users"></i> Team size: 2
+                </div>
+                <div class="metadata-item">
+                    <i class="fas fa-link"></i> 
+                    <a href="https://shareknowledgepro.com" target="_blank">shareknowledgepro.com</a>
+                </div>
+            </div>
+
+            <div class="project-description">
+                <ul>
+                    <li>Admissions information page - class arrangement - online student management include page home and admin</li>
+                    <li>Build backend and CICD pipeline deploy</li>
+                    <li>Integrate online payment VNPAY</li>
+                </ul>
+            </div>
+
+            <div class="project-tech">
+                <h4>TECHNOLOGY USED</h4>
+                <div class="tech-stack">
+                    <div class="tech-category">
+                        <div class="tech-items">
+                            <span class="tech-item">Java 8</span>
+                            <span class="tech-item">Spring Framework</span>
+                            <span class="tech-item">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <div class="tech-items">
+                            <span class="tech-item">Docker</span>
+                            <span class="tech-item">Ngix</span>
+                            <span class="tech-item">Websocket</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <div class="tech-items">
+                            <span class="tech-item">AWS</span>
+                            <span class="tech-item">Cloudflare</span>
+                            <span class="tech-item">Google console</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="section">
+        <h2>EDUCATION</h2>
+        <p>
+            <strong>Software Engineer</strong><br>
+            Industrial University of Ho Chi Minh City (2019 - 2024)<br>
+            GPA: 3.6/4.0
+        </p>
+    </div> -->
+
+
+    <div class="section">
+        <h2>SOFT SKILLS</h2>
+        <ul>
+            <li>English: Read and understand technical documentation and communicate at a basic level.</li>
+            <li>Teamwork and Collaboration</li>
+            <li>Self-study and continuous learning</li>
+            <li>Responsible and under high work pressure</li>
+        </ul>
+    </div>
+</body>
+</html>
